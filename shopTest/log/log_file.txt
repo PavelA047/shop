@@ -1,0 +1,9 @@
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:29:18.033832600
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:29:22.375824400
+execution(void com.example.shoptest.service.ProductServiceImpl.addToUserBucket(Long,String)) 2022-06-08T15:29:56.057042500
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:29:56.094715700
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:30:00.472390600
+execution(void com.example.shoptest.service.ProductServiceImpl.addToUserBucket(Long,String)) 2022-06-08T15:30:01.822373800
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:30:01.843376400
+execution(void com.example.shoptest.service.ProductServiceImpl.addToUserBucket(Long,String)) 2022-06-08T15:30:02.836617500
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:30:02.849620400

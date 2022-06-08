@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User list</title>
+</head>
+<body>
+<div th:insert="~{fragments/menu :: #nav-menu}"></div>
+<h2>Your bucket</h2>
+<h3>All sum -> <b th:text="${bucket.sum}">1000</b></h3>
+<h3>All qty -> <b th:text="${bucket.amountProducts}">1000</b></h3>
+
+<table border="1" align="center">
+    <tr>
+        <td>Title</td>
+        <td>Amount</td>
+        <td>Price</td>
+        <td>Sum</td>
+        <td></td>
+    </tr>
+    <tr th:each="detail : ${bucket.bucketDetails}">
+        <td th:text="${detail.title}">Test title</td>
+        <td th:text="${detail.amount}">Test amount</td>
+        <td th:text="${detail.price}">Test price</td>
+        <td th:text="${detail.sum}">Test sum</td>
+        <td>
+            <form class="d-inline" th:method="delete" th:action="@{/bucket/{id}(id = ${detail.productId})}">
+                <button class="btn btn-danger"><i class="far fa-trash-alt"></i>Remove</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<a th:href="@{/order/{bucket_sum}(bucket_sum = ${bucket.sum})}">Continue</a>
+</body>
+</html>

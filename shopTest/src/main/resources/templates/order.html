@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User list</title>
+</head>
+<body>
+<div th:insert="~{fragments/menu :: #nav-menu}"></div>
+<h2>Your order</h2>
+
+<form th:action="@{/order}" th:object="${order}" method="post">
+
+    <table>
+        <tr>
+            <td>Total cost of your order</td>
+            <td th:text="${order.sum}">Test title</td>
+            <input th:field="*{sum}" type="hidden" class="form-control">
+        </tr>
+        <tr>
+            <td>Input address to deliver</td>
+            <td><label>
+                <input type="text" th:field="*{address}">
+            </label></td>
+        </tr>
+    </table>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>

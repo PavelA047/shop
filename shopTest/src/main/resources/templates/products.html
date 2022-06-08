@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Product list</title>
+    <script type="text/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js}"></script>
+    <script type="text/javascript" th:src="@{https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js}"></script>
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+</head>
+<body>
+<div th:insert="~{fragments/menu :: #nav-menu}"></div>
+
+<!--<button id="connect" onclick="connect();">Connect</button>-->
+<input id="resultInput" type="text" size="40">
+
+<table border="1" align="center">
+    <tr>
+        <td>Title</td>
+        <td>Price</td>
+        <td></td>
+    </tr>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.title}">Test title</td>
+        <td th:text="${product.price}">Test price</td>
+        <td><a th:href="@{/products/{id}/bucket(id=${product.id})}" onclick="sendName()">Add to bucket</a></td>
+    </tr>
+</table>
+<a sec:authorize="hasAnyAuthority('ADMIN', 'MANAGER')"><a th:href="@{/products/edit/0}">Add product</a></a>
+</body>
+</html>
