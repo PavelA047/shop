@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Service
 public class ImageSaverService {
-    private static final String UPLOADED_FOLDER = "./images/";
+    private static final String UPLOADED_FOLDER = "./shopTest/images/";
 
     public String saveFile(MultipartFile file) {
         if (file.isEmpty()) {

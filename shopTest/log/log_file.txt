@@ -7,3 +7,15 @@ execution(void com.example.shoptest.service.ProductServiceImpl.addToUserBucket(L
 execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:30:01.843376400
 execution(void com.example.shoptest.service.ProductServiceImpl.addToUserBucket(Long,String)) 2022-06-08T15:30:02.836617500
 execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:30:02.849620400
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:34:33.170760800
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:34:38.777751100
+execution(Product com.example.shoptest.service.ProductServiceImpl.getProductById(Long)) 2022-06-08T15:34:40.068235800
+execution(boolean com.example.shoptest.service.ProductServiceImpl.isProductWithTitleExists(String)) 2022-06-08T15:34:59.644310700
+execution(void com.example.shoptest.service.ProductServiceImpl.saveProduct(Product)) 2022-06-08T15:34:59.740176
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:34:59.844166400
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:35:04.861464900
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:36:24.368034400
+execution(Product com.example.shoptest.service.ProductServiceImpl.getProductById(Long)) 2022-06-08T15:36:25.597654400
+execution(boolean com.example.shoptest.service.ProductServiceImpl.isProductWithTitleExists(String)) 2022-06-08T15:36:38.511226600
+execution(void com.example.shoptest.service.ProductServiceImpl.saveProduct(Product)) 2022-06-08T15:36:38.609334900
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:36:38.710917400
