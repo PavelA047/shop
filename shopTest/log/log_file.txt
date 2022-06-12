@@ -19,3 +19,6 @@ execution(Product com.example.shoptest.service.ProductServiceImpl.getProductById
 execution(boolean com.example.shoptest.service.ProductServiceImpl.isProductWithTitleExists(String)) 2022-06-08T15:36:38.511226600
 execution(void com.example.shoptest.service.ProductServiceImpl.saveProduct(Product)) 2022-06-08T15:36:38.609334900
 execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:36:38.710917400
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-08T15:53:04.375273800
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-12T23:59:29.054932800
+execution(List com.example.shoptest.service.ProductServiceImpl.getAll()) 2022-06-13T00:03:10.043607300
