@@ -36,7 +36,6 @@
     </dependencyManagement>
 
     <modules>
-        <module>config-server</module>
         <module>shopTest</module>
         <module>eurekaServer</module>
         <module>showProductsService</module>
