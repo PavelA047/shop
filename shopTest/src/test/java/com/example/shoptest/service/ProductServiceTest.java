@@ -19,8 +19,8 @@ import java.util.Arrays;
 import java.util.Optional;
 
 @ExtendWith(SpringExtension.class)
-//@DataJpaTest
-@SpringBootTest
+@DataJpaTest
+//@SpringBootTest
 class ProductServiceTest {
 
     @MockBean
@@ -29,7 +29,7 @@ class ProductServiceTest {
     @Autowired
     private ProductService productService;
 
-//    @Autowired
+    @Autowired
 //    private TestEntityManager entityManager;
 
     @Test
