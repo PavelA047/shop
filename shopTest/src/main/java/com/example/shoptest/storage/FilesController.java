@@ -33,9 +33,10 @@ public class FilesController {
 
     @GetMapping("/getfile")
     public ResponseEntity<Resource> downloadFile(
-            @RequestParam("hash") UUID hash
+            @RequestParam("hash") UUID hash,
+            @RequestParam("fileName") String fileName
     ) throws IOException {
-        byte[] array = fileStoreService.getFile(hash);
+        byte[] array = fileStoreService.getFile(hash, fileName);
         return ResponseEntity.ok()
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(new ByteArrayResource(array));
@@ -44,5 +45,14 @@ public class FilesController {
     @GetMapping("/getfiles")
     public ResponseEntity<?> downloadFile(@RequestParam("subtype") int subtype) throws IOException {
         return ResponseEntity.ok(fileStoreService.getMetaFiles(subtype));
+    }
+
+    @DeleteMapping("/deletefile")
+    public String deleteFile(
+            @RequestParam("hash") UUID hash,
+            @RequestParam("fileName") String fileName
+    ) throws IOException {
+        fileStoreService.deleteFile(hash, fileName);
+        return fileName + " deleted";
     }
 }

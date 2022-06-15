@@ -9,5 +9,5 @@ public interface IFileSystemProvider {
 
     String storeFile(byte[] content, UUID md5, String fileName) throws IOException;
 
-    void deleteFile(String fileHash) throws IOException;
+    void deleteFile(UUID fileHash, String fileName) throws IOException;
 }

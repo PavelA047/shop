@@ -56,12 +56,16 @@ public class FileSystemProvider implements IFileSystemProvider {
         return fullFileName;
     }
 
-
     @Override
-    public void deleteFile(String fileHash) throws IOException {
-        Path path = Paths.get(fileHash);
-        if (Files.exists(path)) {
-            Files.delete(path);
+    public void deleteFile(UUID fileHash, String fileName) throws IOException {
+        String fileNameExtension = FilenameUtils.getExtension(fileName);
+        fileName = String.format("%s.%s", fileHash, fileNameExtension);
+
+        Path fullFileNamePath = Paths.get(storePath.toString(), fileName);
+
+        if (!Files.exists(fullFileNamePath)) {
+            throw new IOException("file doesn't exists in directory");
         }
+        Files.delete(fullFileNamePath);
     }
 }
