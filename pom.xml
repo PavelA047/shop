@@ -39,5 +39,6 @@
         <module>shopTest</module>
         <module>eurekaServer</module>
         <module>showProductsService</module>
+        <module>contract</module>
     </modules>
 </project>
