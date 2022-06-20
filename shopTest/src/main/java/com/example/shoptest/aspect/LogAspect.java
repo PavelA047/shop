@@ -17,18 +17,19 @@ import java.time.LocalDateTime;
 public class LogAspect {
 
     //логгирование методов работы с продуктом с записью в файл
-    @After("execution(* com.example.shoptest.service.ProductService.*(..))")
-    public void logProductMethod(JoinPoint joinPoint) {
-
-        try {
-            Files.writeString(Paths.get("shopTest/log/log_file.txt"),
-                    joinPoint.toString() + " " + LocalDateTime.now() + "\r\n",
-                    StandardOpenOption.CREATE,
-                    StandardOpenOption.APPEND);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    //закрыл из-за тестирования
+//    @After("execution(* com.example.shoptest.service.ProductService.*(..))")
+//    public void logProductMethod(JoinPoint joinPoint) {
+//
+//        try {
+//            Files.writeString(Paths.get("shopTest/log/log_file.txt"),
+//                    joinPoint.toString() + " " + LocalDateTime.now() + "\r\n",
+//                    StandardOpenOption.CREATE,
+//                    StandardOpenOption.APPEND);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     //аггрегация суммы и количества товара
     @AfterReturning(value = "execution(* com.example.shoptest.service.BucketService.getBucketByUser(..))", returning = "res")
