@@ -1,24 +1,26 @@
 package com.example.showproductsservice.controller;
 
-import com.example.showproductsservice.entity.Product;
-import com.example.showproductsservice.service.ProductShowService;
+import com.example.shoptest.dto.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class ProductShowController {
-    private final ProductShowService productShowService;
+    private final ProductShowServiceController productShowServiceController;
 
     @Autowired
-    public ProductShowController(ProductShowService productShowService) {
-        this.productShowService = productShowService;
+    public ProductShowController(ProductShowServiceController productShowServiceController) {
+        this.productShowServiceController = productShowServiceController;
     }
 
-    @GetMapping("/get_list")
-    public List<Product> showProducts() {
-        return productShowService.getProductList();
+    @RequestMapping("/get_product_list")
+    public String getProductList(Model model) {
+        List<ProductDto> products = productShowServiceController.getList();
+        model.addAttribute(products);
+        return "product_list_view";
     }
 }
